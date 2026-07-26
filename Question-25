@@ -1,0 +1,5 @@
+display channel name and no.of programs it broadcasts
+
+select c.channelname , count(distinct p.programmeid)
+from channel c left join programme p on c.channelid =
+p.channelid group by c.channelid;
