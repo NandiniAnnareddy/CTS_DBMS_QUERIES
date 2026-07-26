@@ -1,0 +1,4 @@
+display users who didnt place any orders.
+
+select u.id , u.name , u.email from users u  left join orders o on o.user_id = u.id 
+ where o.user_id is null;
