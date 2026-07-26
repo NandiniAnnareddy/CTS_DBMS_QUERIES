@@ -1,0 +1,4 @@
+display employess whose experience > 5 and category = 'B'
+
+
+select empid,empname,yrs_of_exp from employee where yrs_of_exp > 5 and category = 'B';
