@@ -1,0 +1,3 @@
+total number of equipment currently operational in gym.
+
+select count(*) from equipment where status = "Operational";
