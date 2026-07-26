@@ -1,0 +1,12 @@
+Write an SQL query to display:
+
+List each order along with the customer's name, payment method, and delivery status.
+
+Your output should have 4 columns as given below:
+
+| ORDER_ID | NAME | DELIVERY_STATUS | PAYMENT_METHOD |
+
+
+select o.order_id , u.name , d.delivery_status , p.payment_method 
+from orders1 o left join users1 u on o.user_id = u.user_id join deliveries1 d 
+on d.order_id = o.order_id join payments1 p on p.order_id = o.order_id;
