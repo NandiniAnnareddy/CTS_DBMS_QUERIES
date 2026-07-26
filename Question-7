@@ -1,0 +1,3 @@
+select e.name ,  count(ev.visitor_id) as visitor_count  from enclosure e left join enclosure_visit_log ev 
+  on e.enclosure_id = ev.enclosure_id 
+   group by ev.enclosure_id order by count(ev.visitor_id) desc ;
