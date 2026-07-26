@@ -1,0 +1,3 @@
+display the names of users whose email has "admin" in it .
+
+select name from users1 where email like "%admin%"
