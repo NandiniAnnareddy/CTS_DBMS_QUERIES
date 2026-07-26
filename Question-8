@@ -1,0 +1,4 @@
+display the users and the amount they spend - displat by descending order
+
+select u.name , sum(t.amount) as total_amount from users u left join transactions t on u.user_id = t.user_id 
+  group by t.user_id order by sum(t.amount) desc;
