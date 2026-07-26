@@ -1,0 +1,4 @@
+display the animal name that start with M and quantity > 5
+
+select a.Species, f.Food_Item from animal a join feeding_schedule f
+on a.Animal_ID =f.Animal_ID where a.Species like 'M%' and f.Quantity > 5;
