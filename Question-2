@@ -1,0 +1,3 @@
+The highest amount (use alias max_amount) among all the payments . Your output should have a column as given below :
+
+select payment_id , payment_amount as MAX_AMOUNT from payments order by payment_amount desc limit 1;
