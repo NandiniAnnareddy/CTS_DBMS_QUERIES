@@ -1,0 +1,3 @@
+Names and phone numbers of all the users whose name starts with 'A'
+
+select name , phone_number from employees where name like 'A%';
