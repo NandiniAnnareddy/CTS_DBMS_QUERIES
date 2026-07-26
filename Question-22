@@ -1,0 +1,6 @@
+Write an SQL query to display:
+
+The First name (use alias Staff First Name), Position and Salary of staff members where salary is greater than 50000.
+
+
+select FirstName , Position , Salary from Staff where Salary > 50000;
