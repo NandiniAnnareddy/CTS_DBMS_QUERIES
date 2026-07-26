@@ -1,0 +1,13 @@
+Write an SQL query to display:
+
+User's name and email along with the total amount they have paid in 
+completed payments (total_paid). 
+Only include users with at least one completed payment. 
+Order the results by total_paid in descending order.
+
+
+
+
+select u.name , u.email , sum(p.amount) as total_paid from users u join payments p
+on u.user_id = p.user_id where p.payment_status = "Completed"  
+group by p.user_id order by total_paid desc;
