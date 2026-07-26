@@ -1,0 +1,5 @@
+QUESTION : 
+Display enclosure name , enclosure id , visitor count of two most visited enclosures . Output should have 3 columns.
+
+select e.name as Name , e.enclosure_id as Enclosure_ID , count(ev.visitor_id) as visitor_count from enclosure e join enclosure_visit_log ev on e.enclosure_id = ev.enclosure_id 
+group by ev.enclosure_id order by visitor_count desc limit 2;
