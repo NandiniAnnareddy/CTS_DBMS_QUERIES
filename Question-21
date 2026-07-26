@@ -1,0 +1,3 @@
+count of trainers who have stength as their speciality
+
+select count(*) from trainer where specialty = "Strength"
