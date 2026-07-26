@@ -1,0 +1,3 @@
+The number of years in which the users were created.
+
+select count(distinct year(created_at)) from users;
