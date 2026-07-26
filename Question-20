@@ -1,0 +1,13 @@
+Each customer's name and email along with the number of delivered orders 
+they've received (DELIVERED_COUNT), and the total delivery fees 
+they've paid (TOTAL_DELIVERY_FEE, rounded to 2 decimal places).
+
+Only include customers with at least one delivered order.
+Order the results by DELIVERED_COUNT in descending order
+
+
+
+
+select u.name , u.email , count(d.delivery_id) as no_of_delivered_orders , round(sum(d.delivery_fee),2) from users u join orders o  on 
+u.user_id = o.user_id join deliveries d on d.order_id = o.order_id where d.delivery_status = "Delivered" 
+group by u.user_id order by no_of_delivered_orders desc;
