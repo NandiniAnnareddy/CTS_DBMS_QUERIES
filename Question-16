@@ -1,0 +1,8 @@
+display the most expensive product price in each order . display the output by descending order of order id
+
+
+SELECT order_id,
+       MAX(price) AS MAX_PRICE
+FROM order_items
+GROUP BY order_id
+ORDER BY order_id DESC;
