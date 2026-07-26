@@ -1,0 +1,10 @@
+Write an SQL query to display:
+
+Plan ID, notes, and duration in days of diet plans whose daily calorie limit is less than 2000.
+
+The duration should be calculated as the difference between the 
+plan end date and the plan start date using DATEDIFF().
+
+
+select planid , notes , DATEDIFF(planenddate,planstartdate) 
+from dietplan where dailycalories < 2000;
