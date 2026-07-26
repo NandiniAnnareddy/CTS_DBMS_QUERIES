@@ -1,0 +1,1 @@
+select avg(transaction_amount) from transaction_details where payment_mode="Credit";
