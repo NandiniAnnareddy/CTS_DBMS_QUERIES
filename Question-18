@@ -1,0 +1,5 @@
+list each product with total number of reviews it received.
+
+select p.name , count(review_id) as no_of_reviews 
+from products p left join reviews r on p.product_id = r.product_id
+group by r.product_id ;
