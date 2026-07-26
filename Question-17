@@ -1,0 +1,7 @@
+The first name and last name of instructors, along with the count of courses they teach in term '2'. 
+Sort the results by the number of courses they teach in descending order.
+
+select i.first_name , i.last_name , count(s.course_id) as no_of_courses
+from instructor i join section s on i.instructor_id = s.instructor_id 
+join course c on s.course_id = c.course_id where c.term = 2
+  group by s.instructor_id order by no_of_courses desc ;
