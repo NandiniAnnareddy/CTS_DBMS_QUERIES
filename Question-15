@@ -1,0 +1,3 @@
+dispay the deleiveries where the delivery_status is failed .
+
+select * from deliveries where delivery_status="Failed";
