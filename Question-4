@@ -1,0 +1,5 @@
+display fname , lname , contact_info of all passengers who have a boarding pass for flight ID 5 and having gluten free meal preference.
+
+select p.first_name , p.last_name , p.contact_info from passenger p join meal_preference m on p.passenger_id = m.passenger_id 
+join boarding_pass b on m.passenger_id = b.passenger_id 
+where b.flight_id = 5 and m.meal_type = "Gluten-free";
