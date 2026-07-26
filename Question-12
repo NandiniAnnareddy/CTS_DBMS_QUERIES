@@ -1,0 +1,5 @@
+display firstname , contact , balance of customers whose account type name starts with "Sa" and order by first name
+
+select c.First_name , c.Contact , a.Balance from customer c join account a 
+  on c.Customer_ID = a.Customer_ID join account_type at on a.Account_Type_ID = at.Account_Type_ID 
+  where at.Account_Type_Name like "Sa%" order by c.First_Name ; 
