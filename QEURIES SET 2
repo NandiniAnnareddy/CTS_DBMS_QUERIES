@@ -1,0 +1,135 @@
+1.  display the count of unlicensed movies in the database
+
+select count(*) from movie m left join movielicense ml
+on m.movieid = ml.movieid where ml.movieid is Null;
+
+
+2. display the name , species , gender , first name and last name of caretaker  as full name for all the male animals .
+
+select a.name , a.species , a.gender , 
+  concat(ct.first_name,' ', ct.last_name) as caretaker_name
+  from animal a 
+join animal_caretaker ac on a.animal_id = ac.animal_id
+join caretaker ct on ct.caretaker_id = ac.caretaker_id
+where a.gender = "Male";
+
+
+3. display fname , lastname , posiition , total sales they made and return them in descending order
+
+select concat(s.firstname, " ", s.lastname) as name ,
+s.position , sum(o.totalamount) as total_sales
+from staff s join orders o on s.staffid = o.staffid 
+  where o.status = "Completed"
+group by o.staffid order by total_sales desc; 
+
+
+4. Write an SQL query to display:
+Title, description, and genre of TV shows that belong to the 'Kids' genre.
+
+
+select title , description , genre from tvshow where genre ="Kids";
+
+
+5. Write an SQL query to display:
+Order ID, User ID, and Total Price of orders whose total price is greater than 15.
+
+
+select  order_id , user_id ,total_price from orders1  
+   where total_price>15;
+
+
+6. Write an SQL query to display:
+The country and the number of players from each country (use alias PLAYER_COUNT).
+
+
+select country , count(player_id) as PLAYER_COUNT 
+from players group by country ;
+
+
+7. Write an SQL query to display:
+Order ID, User ID, Payment Status, and Total Price for all orders where the payment status is Pending.
+
+select order_id , user_id , payment_status, total_price from
+orders where payment_status = "Pending";
+
+
+8. Write an SQL query to display:
+Each user type and the total number of users of that type.
+
+
+select user_type , count(user_id) from users 
+group by user_type;
+
+
+9. Write an SQL query to display:
+Movie name and channel name for movies whose rights type is Linear Pay TV.
+
+select c.name , m.title from movie m join movielicense ml
+on ml.movieid = m.movieid join channel c on 
+c.channelid = ml.channelid where ml.rightstype = "Linear Pay TV";
+
+
+10. write an SQL query to display:
+The visitor's name, ticket type, enclosure's name, and enclosure's type for
+all visitors whose ticket type is not Child and whose enclosure type is not Arctic.
+
+
+select v.name , v.ticket_type , e.name , e.type from
+visitor v join enclosure_visit_log ev on 
+  ev.visitor_id = v.visitor_id join enclosure e on 
+e.enclosure_id = ev.enclosure_id where v.ticket_type != "Child"
+and e.type != "Arctic";
+
+
+11. Write an SQL query to display:
+Airing ID, Episode ID, and Channel Name for episodes that air after 6:00 PM.
+
+select a.airingid , a.episodeid , c.name from airing a join 
+channel1 c on c.channelid = a.channelid where 
+time(a.starttime) > time('18:00:00') and a.episodeid is not null;
+
+
+12. Write an SQL query to display:
+Order ID, User ID, and the date for all orders placed on January 3, 2025.
+
+select order_id , user_id , placed_at from orders1 
+where DATE(placed_at) = '2025-01-03';
+
+
+13. Write an SQL query to display:
+
+Title of the movie and its duration in hours where the right to air
+for the movie is Free-to-Air.
+Hint: Duration in hours = (durationmin) / 60
+
+select m.title , round((m.durationmin)/60,2) as duration from movie m 
+join movielicense ml on m.movieid = ml.movieid
+where ml.rightstype = "Free-to-Air";
+
+
+14. Write an SQL query to display:
+Review ID, User ID, Product ID, Rating, and Review Text for all reviews 
+where the rating is 5 (five-star reviews).
+
+select * from reviews where rating = 5;
+
+
+15. Write an SQL query to display:
+The number of users registered in the system (use alias USER_NUMBER).
+
+select count(distinct user_id) as user_number from users;
+
+
+16. Write an SQL query to display:
+The names of English movies and the names of the channels that air them.
+
+select m.title , c.name from movie1 m join movielicense1 ml
+on ml.movieid = m.movieid join channel1 c on 
+c.channelid = ml.channelid where m.language = "English";
+
+
+17. Write an SQL query to display:
+Product ID, Name, and Stock Quantity of every product whose stock quantity is less than 100.
+
+
+select * from products where stock_quantity < 100 ;
